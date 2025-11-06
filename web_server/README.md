@@ -1,2 +1,1 @@
-Web Server 
-Setting nginx
+web_server
