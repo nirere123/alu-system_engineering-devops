@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+i#!/usr/bin/env bash
 # Create a script to install and configure HAProxy on lb-01 server
 # Configure HAProxy to send traffic to web-01 and web-02 servers
 # Distribute requests using a roundrobin algorithm
@@ -24,8 +24,8 @@ if ! grep -q "frontend nirere123-frontend" /etc/haproxy/haproxy.cfg; then
 
     backend nirere123-backend
         balance roundrobin
-        server 6898-web-01 44.203.172.203:80 check
-        server 6898-web-02 35.175.233.122:80 check"
+        server 6310-web-01 54.85.169.157:80 check
+        server 6310-web-02 54.227.112.222:80 check"
     
     # Append the configuration to haproxy.cfg
     echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
