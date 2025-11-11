@@ -14,16 +14,16 @@ cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
 # Configure HAProxy with frontend and backend
 cat >> /etc/haproxy/haproxy.cfg <<EOF
 
-frontend nirere123-frontend
+frontend nirere-frontend
     bind *:80
     mode http
-    default_backend nirere123-backend
+    default_backend nirere-backend
 
-backend nirere123-backend
+backend nirere-backend
     balance roundrobin
     server 6898-web-01 44.203.172.203:80 check
-    server 6898-web-02 35.175.233.122:80 check
+    server 6877-web-02 35.175.233.122:80 check
 EOF
 
 # Restart HAProxy service
-service haproxy restarting
+service haproxy restart
